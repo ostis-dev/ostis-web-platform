@@ -12,7 +12,5 @@ def copy_kb(kb_path: str, copy_path: str) -> None:
                 shutil.rmtree(os.path.join(copy_path, i))
             elif os.path.isfile(os.path.join(copy_path, i)):
                 os.remove(os.path.join(copy_path, i))
-    except FileNotFoundError as er:
-        print(er)
-    except OSError as er:
+    except (FileNotFoundError, OSError) as er:
         print(er)
