@@ -12,7 +12,6 @@ class CopyKbPaths(Enum):
 
 def main(copy_kb_path: str):
     copy_kb_path = os.path.join(CopyKbPaths.OSTIS.value, os.path.split(copy_kb_path)[1])
-    CopyKbPaths.KB_COPY = os.path.join(CopyKbPaths.OSTIS.value, copy_kb_path)
     copy_kb(CopyKbPaths.KB.value, copy_kb_path)
     scripts = [os.path.join(CopyKbPaths.SCRIPTS.value, 'remove_scsi.py')]
     for script in scripts:
